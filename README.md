@@ -30,4 +30,3 @@ Enter following details on the GUI based on the needs:
 * JMS Factory - JNDI name of JMS Factory on Weblogic server
 * JMS Queue - JNDI name of JMS Queue on Weblogic server
 * Correlation ID - Correlation ID of the message
-# jms-message-publisher-oracle-wls-gui
