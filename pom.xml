@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jms-message-publisher-wls-gui</groupId>
+	<artifactId>jms-message-publisher-wls-gui</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<java.version>1.7</java.version>
+		<!-- Update with the location of Oracle Weblogic Server Home on your system-->
+		<weblogic.home>/home/portal/Oracle/Middleware/Oracle_Home</weblogic.home>
+	</properties>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>weblogic</groupId>
+			<artifactId>wlthint3client.jar</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${weblogic.home}/wlserver/server/lib/wlthint3client.jar</systemPath>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>jms-message-publisher-wls-gui</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<version>3.1.0</version>
+					<archive>
+						<manifest>
+							<mainClass>com.nv.test.jms.publisher.gui.JMSQueuePublisher</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
